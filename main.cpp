@@ -16,8 +16,7 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 int main()
 {
     glfwSetErrorCallback(error_callback);
-    glfwInitHint(GLFW_PLATFORM, GLFW_PLATFORM_NULL);
-
+    
     glfwInit();
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
