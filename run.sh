@@ -1,2 +1,4 @@
-make all
+cd build
+cmake ..
+cmake --build .
 ./main
