@@ -1,4 +1,4 @@
 cd build
-cmake ..
+pmake ..
 cmake --build .
 ./main

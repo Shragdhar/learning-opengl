@@ -1,6 +1,6 @@
 CMakeFiles/main.dir/main.cpp.o: \
  /home/q/Development/C++/OpenGL/opengl-first-proj/main.cpp \
- /usr/include/stdc-predef.h /usr/include/glad/glad.h \
+ /usr/include/stdc-predef.h /usr/include/GL/gl.h /usr/include/GL/glext.h \
  /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -17,7 +17,7 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/local/include/GLFW/glfw3.h \
+ /usr/include/glad/glad.h /usr/local/include/GLFW/glfw3.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h \
  /usr/include/c++/12/iostream \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
