@@ -70,11 +70,9 @@ CMakeFiles/main.dir/glad.c.o: /home/q/Development/C++/OpenGL/opengl-first-proj/g
 
 CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj/main.cpp \
   /usr/include/stdc-predef.h \
-  /usr/include/glad/glad.h \
-  /usr/include/KHR/khrplatform.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h \
-  /usr/include/stdint.h \
-  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/c++/12/cstddef \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -83,6 +81,14 @@ CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h \
+  /usr/include/c++/12/pstl/pstl_config.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h \
+  /usr/include/glad/glad.h \
+  /usr/include/KHR/khrplatform.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
@@ -91,12 +97,7 @@ CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/GL/gl.h \
   /usr/local/include/GLFW/glfw3.h \
-  /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h \
   /usr/include/c++/12/iostream \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h \
-  /usr/include/c++/12/pstl/pstl_config.h \
   /usr/include/c++/12/ostream \
   /usr/include/c++/12/ios \
   /usr/include/c++/12/iosfwd \
@@ -333,7 +334,7 @@ CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj
 
 /usr/include/c++/12/bits/functexcept.h:
 
-/usr/include/c++/12/bits/new_allocator.h:
+/usr/include/x86_64-linux-gnu/c++/12/bits/c++allocator.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
@@ -361,9 +362,11 @@ CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
-/usr/include/string.h:
+/usr/include/c++/12/bits/new_allocator.h:
 
-/usr/include/x86_64-linux-gnu/c++/12/bits/c++allocator.h:
+/usr/include/c++/12/cstddef:
+
+/usr/include/string.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
@@ -531,14 +534,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj
 
 /home/q/Development/C++/OpenGL/opengl-first-proj/main.cpp:
 
-/usr/include/GL/gl.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/usr/local/include/GLFW/glfw3.h:
-
 /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/error_constants.h:
@@ -552,6 +547,14 @@ CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj
 /usr/include/c++/12/pstl/pstl_config.h:
 
 /usr/include/pthread.h:
+
+/usr/include/GL/gl.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/local/include/GLFW/glfw3.h:
 
 /usr/include/glad/glad.h:
 
