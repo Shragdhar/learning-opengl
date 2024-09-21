@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
 project(whatever)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 find_package(glfw3 REQUIRED)
 find_package(OpenGL REQUIRED)
 

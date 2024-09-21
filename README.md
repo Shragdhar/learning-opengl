@@ -1,5 +1,5 @@
 This is a OpenGL 2D game/physics engine made purely as an excuse to learn advanced C++ and graphics programming.
-#### Currently Working On: Making a Triangle
+#### Currently Working On: Making More Shapes!
 ## Planned Features:
 - Cellular Automata
 - Terrain Generation

@@ -89,6 +89,7 @@ CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  /usr/include/GL/gl.h \
   /usr/local/include/GLFW/glfw3.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h \
   /usr/include/c++/12/iostream \
@@ -332,6 +333,8 @@ CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj
 
 /usr/include/c++/12/bits/functexcept.h:
 
+/usr/include/c++/12/bits/new_allocator.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
 /usr/include/c++/12/cstdio:
@@ -492,8 +495,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj
 
 /usr/include/KHR/khrplatform.h:
 
-/usr/include/c++/12/bits/new_allocator.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h:
 
 /usr/include/stdint.h:
@@ -529,6 +530,12 @@ CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj
 /usr/include/errno.h:
 
 /home/q/Development/C++/OpenGL/opengl-first-proj/main.cpp:
+
+/usr/include/GL/gl.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/local/include/GLFW/glfw3.h:
 
@@ -623,10 +630,6 @@ CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
 /usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
