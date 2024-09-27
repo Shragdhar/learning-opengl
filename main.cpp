@@ -1,4 +1,5 @@
 #include <cstddef>
+#include <cmath>
 #include <glad/glad.h>
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
@@ -61,15 +62,14 @@ int main()
     
     //The vertices of the triangle we want to create, no z component = no 3D
     float vertices[] = {
-        -0.5f, -0.5f, 0.0f, //bottom left
-         0.5f, -0.5f, 0.0f, //bottom right
-        -0.5f,  0.5f, 0.0f, //top left
-         0.5f,  0.5f, 0.0f, //top right
+        //vertices          //colors
+        -0.5f, -0.5f, 0.0f, 1.0f, 0.0f, 0.0f, //bottom left
+         0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f,//bottom right
+        -0.5f,  0.5f, 0.0f, 0.0f, 0.0f, 1.0f//top left
     };
     
     unsigned int indices1[] = {
-        0, 2, 3, //first triangle    
-        0, 2, 3 
+        0, 1, 2 //first triangle    
     };
    
     unsigned int EBOid1{0}, VAOid1{0};
@@ -84,9 +84,13 @@ int main()
     
     glBindVertexArray(VAOid1);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-    
+
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBOid1);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices1), indices1, GL_STATIC_DRAW);
     
@@ -96,10 +100,10 @@ int main()
         
         glClear(GL_COLOR_BUFFER_BIT);
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
- 
+       
         shader1.use();
+         
         glBindVertexArray(VAOid1);
-        glBindBuffer(GL_ARRAY_BUFFER, VBO); 
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
 
