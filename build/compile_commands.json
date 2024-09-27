@@ -6,6 +6,11 @@
 },
 {
   "directory": "/home/q/Development/C++/OpenGL/opengl-first-proj/build",
+  "command": "/usr/bin/c++    -o CMakeFiles/main.dir/shader.cpp.o -c /home/q/Development/C++/OpenGL/opengl-first-proj/shader.cpp",
+  "file": "/home/q/Development/C++/OpenGL/opengl-first-proj/shader.cpp"
+},
+{
+  "directory": "/home/q/Development/C++/OpenGL/opengl-first-proj/build",
   "command": "/usr/bin/cc    -o CMakeFiles/main.dir/glad.c.o -c /home/q/Development/C++/OpenGL/opengl-first-proj/glad.c",
   "file": "/home/q/Development/C++/OpenGL/opengl-first-proj/glad.c"
 }
