@@ -129,6 +129,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+ImageConverter.o: ImageConverter.cpp.o
+.PHONY : ImageConverter.o
+
+# target to build an object file
+ImageConverter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ImageConverter.cpp.o
+.PHONY : ImageConverter.cpp.o
+
+ImageConverter.i: ImageConverter.cpp.i
+.PHONY : ImageConverter.i
+
+# target to preprocess a source file
+ImageConverter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ImageConverter.cpp.i
+.PHONY : ImageConverter.cpp.i
+
+ImageConverter.s: ImageConverter.cpp.s
+.PHONY : ImageConverter.s
+
+# target to generate assembly for a file
+ImageConverter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ImageConverter.cpp.s
+.PHONY : ImageConverter.cpp.s
+
 glad.o: glad.c.o
 .PHONY : glad.o
 
@@ -210,6 +234,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... ImageConverter.o"
+	@echo "... ImageConverter.i"
+	@echo "... ImageConverter.s"
 	@echo "... glad.o"
 	@echo "... glad.i"
 	@echo "... glad.s"

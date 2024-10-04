@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/q/Development/C++/OpenGL/opengl-first-proj/glad.c" "CMakeFiles/main.dir/glad.c.o" "gcc" "CMakeFiles/main.dir/glad.c.o.d"
+  "/home/q/Development/C++/OpenGL/opengl-first-proj/ImageConverter.cpp" "CMakeFiles/main.dir/ImageConverter.cpp.o" "gcc" "CMakeFiles/main.dir/ImageConverter.cpp.o.d"
   "/home/q/Development/C++/OpenGL/opengl-first-proj/main.cpp" "CMakeFiles/main.dir/main.cpp.o" "gcc" "CMakeFiles/main.dir/main.cpp.o.d"
   "/home/q/Development/C++/OpenGL/opengl-first-proj/shader.cpp" "CMakeFiles/main.dir/shader.cpp.o" "gcc" "CMakeFiles/main.dir/shader.cpp.o.d"
   )

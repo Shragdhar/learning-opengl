@@ -172,4 +172,5 @@ CMakeFiles/main.dir/main.cpp.o: \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
  /usr/include/c++/12/bits/istream.tcc \
- /home/q/Development/C++/OpenGL/opengl-first-proj/shader.h
+ /home/q/Development/C++/OpenGL/opengl-first-proj/shader.h \
+ /usr/include/stb_image.h /usr/include/c++/12/stdlib.h
