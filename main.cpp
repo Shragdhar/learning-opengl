@@ -3,9 +3,19 @@
 #include <glad/glad.h>
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
+#include <glm/ext/matrix_clip_space.hpp>
+#include <glm/ext/matrix_float4x4.hpp>
+#include <glm/ext/matrix_projection.hpp>
+#include <glm/ext/matrix_transform.hpp>
+#include <glm/ext/vector_float3.hpp>
+#include <glm/trigonometric.hpp>
 #include <iostream>
-#include "shader.h"
 #include <stb_image.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
+#include "shader.h"
 
 //Defining Callbacks
 void error_callback(int error, const char* description)
@@ -73,7 +83,8 @@ int main()
         1.0f, 0.0f,
         0.0f, 1.0f
     };
-   
+    
+
     int width, height, nrChannels;
     unsigned char* data = stbi_load("../Textures/wall.jpg", &width, &height,&nrChannels, 0);
     
@@ -133,6 +144,26 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT);
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
        
+        glm::mat4 model = glm::mat4(1.0f);
+        glm::mat4 view = glm::mat4(1.0f);
+        glm::mat4 projection = glm::mat4(1.0f);
+        glm::mat4 trans = glm::mat4(1.0f);
+
+        model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+        view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+        projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+        trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(1.0f, 0.0f, 0.0f));
+        
+
+        unsigned int modelLoc = glGetUniformLocation(shader1.ID, "model");
+        unsigned int viewLoc = glGetUniformLocation(shader1.ID, "view");
+        unsigned int projectionLoc = glGetUniformLocation(shader1.ID, "projection");
+        unsigned int transLoc = glGetUniformLocation(shader1.ID, "trans");
+        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+        glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+        glUniformMatrix4fv(transLoc, 1, GL_FALSE, glm::value_ptr(trans));
+        
         shader1.use();
          
         glBindTexture(GL_TEXTURE_2D, texture);
