@@ -3,7 +3,6 @@ This is a OpenGL 2D game/physics engine made purely as an excuse to learn advanc
 ## Planned Features:
 - Cellular Automata
 - Terrain Generation
-- Basic Newton's Laws
 
 These are more of a motivation to continue making the engine than absolute features that would be added.
 
