@@ -1,10 +1,10 @@
-This is a OpenGL 2D game/physics engine made purely as an excuse to learn advanced C++ and graphics programming.
+This is a project made purely as an excuse to learn advanced C++ and graphics programming.
 #### Currently Working On: Making More Shapes!
 ## Planned Features:
 - Cellular Automata
 - Terrain Generation
 
-These are more of a motivation to continue making the engine than absolute features that would be added.
+These are more of a motivation to continue learning OpenGL than absolute features that would be added.
 
 ## Prerequisites
 To build this project on Linux you would need to following prerequisites
