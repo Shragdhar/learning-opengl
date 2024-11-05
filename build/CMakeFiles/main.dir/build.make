@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/q/Development/C++/OpenGL/opengl-first-proj
+CMAKE_SOURCE_DIR = /home/q/Development/C++/OpenGL/learning-opengl
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/q/Development/C++/OpenGL/opengl-first-proj/build
+CMAKE_BINARY_DIR = /home/q/Development/C++/OpenGL/learning-opengl/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/main.dir/progress.make
 include CMakeFiles/main.dir/flags.make
 
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/opengl-first-proj/main.cpp
+CMakeFiles/main.dir/main.cpp.o: /home/q/Development/C++/OpenGL/learning-opengl/main.cpp
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/q/Development/C++/OpenGL/opengl-first-proj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/q/Development/C++/OpenGL/opengl-first-proj/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/q/Development/C++/OpenGL/learning-opengl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/main.cpp.o -MF CMakeFiles/main.dir/main.cpp.o.d -o CMakeFiles/main.dir/main.cpp.o -c /home/q/Development/C++/OpenGL/learning-opengl/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/q/Development/C++/OpenGL/opengl-first-proj/main.cpp > CMakeFiles/main.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/q/Development/C++/OpenGL/learning-opengl/main.cpp > CMakeFiles/main.dir/main.cpp.i
 
 CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/q/Development/C++/OpenGL/opengl-first-proj/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/q/Development/C++/OpenGL/learning-opengl/main.cpp -o CMakeFiles/main.dir/main.cpp.s
 
 CMakeFiles/main.dir/glad.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/glad.c.o: /home/q/Development/C++/OpenGL/opengl-first-proj/glad.c
+CMakeFiles/main.dir/glad.c.o: /home/q/Development/C++/OpenGL/learning-opengl/glad.c
 CMakeFiles/main.dir/glad.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/q/Development/C++/OpenGL/opengl-first-proj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/glad.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/glad.c.o -MF CMakeFiles/main.dir/glad.c.o.d -o CMakeFiles/main.dir/glad.c.o -c /home/q/Development/C++/OpenGL/opengl-first-proj/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/q/Development/C++/OpenGL/learning-opengl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/glad.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/glad.c.o -MF CMakeFiles/main.dir/glad.c.o.d -o CMakeFiles/main.dir/glad.c.o -c /home/q/Development/C++/OpenGL/learning-opengl/glad.c
 
 CMakeFiles/main.dir/glad.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/glad.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/q/Development/C++/OpenGL/opengl-first-proj/glad.c > CMakeFiles/main.dir/glad.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/q/Development/C++/OpenGL/learning-opengl/glad.c > CMakeFiles/main.dir/glad.c.i
 
 CMakeFiles/main.dir/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/glad.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/q/Development/C++/OpenGL/opengl-first-proj/glad.c -o CMakeFiles/main.dir/glad.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/q/Development/C++/OpenGL/learning-opengl/glad.c -o CMakeFiles/main.dir/glad.c.s
 
 # Object files for target main
 main_OBJECTS = \
@@ -114,7 +114,7 @@ main: /usr/lib/x86_64-linux-gnu/libm.so
 main: /usr/lib/x86_64-linux-gnu/libGLX.so
 main: /usr/lib/x86_64-linux-gnu/libOpenGL.so
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/q/Development/C++/OpenGL/opengl-first-proj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/q/Development/C++/OpenGL/learning-opengl/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -126,6 +126,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd /home/q/Development/C++/OpenGL/opengl-first-proj/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/q/Development/C++/OpenGL/opengl-first-proj /home/q/Development/C++/OpenGL/opengl-first-proj /home/q/Development/C++/OpenGL/opengl-first-proj/build /home/q/Development/C++/OpenGL/opengl-first-proj/build /home/q/Development/C++/OpenGL/opengl-first-proj/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/q/Development/C++/OpenGL/learning-opengl/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/q/Development/C++/OpenGL/learning-opengl /home/q/Development/C++/OpenGL/learning-opengl /home/q/Development/C++/OpenGL/learning-opengl/build /home/q/Development/C++/OpenGL/learning-opengl/build /home/q/Development/C++/OpenGL/learning-opengl/build/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 

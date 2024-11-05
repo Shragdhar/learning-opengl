@@ -1,5 +1,5 @@
 CMakeFiles/main.dir/glad.c.o: \
- /home/q/Development/C++/OpenGL/opengl-first-proj/glad.c \
+ /home/q/Development/C++/OpenGL/learning-opengl/glad.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
