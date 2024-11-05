@@ -1,3 +1,0 @@
-/home/q/Development/C++/OpenGL/learning-opengl/build/CMakeFiles/main.dir
-/home/q/Development/C++/OpenGL/learning-opengl/build/CMakeFiles/edit_cache.dir
-/home/q/Development/C++/OpenGL/learning-opengl/build/CMakeFiles/rebuild_cache.dir
