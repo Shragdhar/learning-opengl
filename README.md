@@ -1,3 +1,5 @@
+**Progress halted till Feb 1, 2025 due to exams**
+
 This is a project made purely as an excuse to learn advanced C++ and graphics programming.
 #### Currently Working On: Making More Shapes!
 ## Planned Features:
