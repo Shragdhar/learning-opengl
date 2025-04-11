@@ -14,6 +14,8 @@ file(GLOB_RECURSE sources ${source_dir}/*.cpp ${source_dir}/*.c ${source_dir}/*.
 
 add_executable(main ${sources})
 
+target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/src)
+
 # Enable for SDL2
 find_package(SDL2 REQUIRED)
 target_link_libraries(main ${SDL2_LIBRARIES})

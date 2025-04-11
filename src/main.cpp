@@ -1,6 +1,6 @@
-#include "handler.hpp"
-#include "Shader.hpp"
-#include "Abstraction/Buffer.hpp"
+#include "Abstraction/Window/handler.hpp"
+#include "Abstraction/Shader/Shader.hpp"
+#include "Abstraction/Buffers/Buffer.hpp"
 
 using namespace absGL;
 
