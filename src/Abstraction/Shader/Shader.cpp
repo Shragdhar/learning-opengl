@@ -1,4 +1,5 @@
 #include "Abstraction/Window/handler.hpp"
+#include "Abstraction/System/FileHandler.hpp"
 #include "Shader.hpp"
 
 Shader::Shader(std::string vertex_path, std::string fragment_path, std::string base_dir)
