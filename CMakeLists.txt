@@ -1,8 +1,23 @@
 cmake_minimum_required(VERSION 3.15)
-project(whatever)
+project(main)
 
-find_package(glfw3 REQUIRED)
+# For debugging
+# set(CMAKE_BUILD_TYPE Debug)
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -pg")
+# set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pg")
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+set(source_dir src)
+
+file(GLOB_RECURSE sources ${source_dir}/*.cpp ${source_dir}/*.c ${source_dir}/*.h)
+
+add_executable(main ${sources})
+
+# Enable for SDL2
+find_package(SDL2 REQUIRED)
+target_link_libraries(main ${SDL2_LIBRARIES})
+
+# Enable for OpenGL
 find_package(OpenGL REQUIRED)
-
-add_executable(main main.cpp glad.c)
-target_link_libraries(main PRIVATE glfw OpenGL::GL)
+target_link_libraries(main OpenGL::GL)
