@@ -1,5 +1,6 @@
 #include "Window.hpp"
-#include "Abstraction/Window/handler.hpp"
+#include "Abstraction/Input/Input.hpp"
+#include "Abstraction/Shader/Shader.hpp"
 
 // Factory function to create window instance and return it
 std::unique_ptr<Window> Window::CreateGLWindow(const std::string& title, int posX, int posY, uint32_t height, uint32_t width, Uint32 flags)
@@ -13,6 +14,8 @@ std::unique_ptr<Window> Window::CreateGLWindow(const std::string& title, int pos
         std::cout << "Failed to create SDL window: " << SDL_GetError();
     }
 
+    instance->running = true;
+
     SDL_GLContext glContext = SDL_GL_CreateContext(instance->SDL_window);
     if (!glContext) {
         std::cout << "Failed to create glContext: " << SDL_GetError();
@@ -25,11 +28,25 @@ std::unique_ptr<Window> Window::CreateGLWindow(const std::string& title, int pos
     return instance;
 }
 
+bool Window::IsWindowResized() { return Input::WindowEvent::Resized; }
+
 void Window::Clear(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)
 {
     glClearColor(red, green, blue, alpha);
     glClear(GL_COLOR_BUFFER_BIT);
 }
+
+void Window::Resize(GLfloat width, GLfloat height)
+{
+    glViewport(0, 0, width, height);
+}
+
+void Window::SwapWindow()
+{
+    SDL_GL_SwapWindow(GetSDLWindow());
+}
+
+void Window::Quit() { running = false; }
 
 // ---------------- PRIVATE FUNCTIONS ------------------------
 //
@@ -56,4 +73,3 @@ bool Window::init_GLAD()
     }
     return true;
 }
-

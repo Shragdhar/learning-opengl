@@ -3,6 +3,7 @@
 #include "Abstraction/Buffers/Buffer.hpp"
 #include "Abstraction/System/FileHandler.hpp"
 #include "Abstraction/Window/Window.hpp"
+#include "Abstraction/Input/Input.hpp"
 
 #define UniquePtr(X) std::unique_ptr<X>
 
@@ -14,7 +15,8 @@ SDL_Event event;
 int main()
 {
     UniquePtr(Window) window =
-        Window::CreateGLWindow("Weird ass title", 0, 0, 800, 800, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+        Window::CreateGLWindow("Weird ass title", 0, 0, 800, 800);
+    /*Input input;*/
 
     std::string proj_dir = FileHandler::get_base_dir();
     std::string vertex_file = "src/shaders/vertex.vs";
@@ -36,7 +38,7 @@ int main()
     VBO1.unbind();
     VAO1.unbind();
 
-    while (running)
+    while (window->is_running())
     {
         window->Clear(0.2, 0.3, 0.5);
 
@@ -44,12 +46,13 @@ int main()
         VAO1.bind();
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
-        while (SDL_PollEvent(&event)) 
-        {
-            handle_framebuffer_resize(event);
-            handle_quit_event(event, running);
-        }
-        SDL_GL_SwapWindow(window->GetSDLWindow());
+        Input::Listen();
+
+        if (window->IsWindowResized()) { window->Resize(Input::WindowEvent::Width, Input::WindowEvent::Height); }
+        if (Input::IsKeyPressed(Input::Key::Escape)) { window->Quit(); }
+
+
+        window->SwapWindow();
     }
 
     return 0;

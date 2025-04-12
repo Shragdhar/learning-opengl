@@ -13,8 +13,8 @@ void handle_quit_event(const SDL_Event &event, bool &running)
 void handle_framebuffer_resize(const SDL_Event &event)
 {
     if (event.window.event == SDL_WINDOWEVENT_RESIZED ||
-        event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
-        
+        event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED)
+    {
         int newWidth = event.window.data1;
         int newHeight = event.window.data2;
         framebuffer_size_callback(newWidth, newHeight);
