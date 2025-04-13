@@ -41,5 +41,4 @@ private:
     static bool init_SDL();
     static bool init_GLAD();
 
-    /*friend class std::unique_ptr<Window>;*/
 };

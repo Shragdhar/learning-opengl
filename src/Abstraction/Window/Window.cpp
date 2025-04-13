@@ -28,7 +28,7 @@ std::unique_ptr<Window> Window::CreateGLWindow(const std::string& title, int pos
     return instance;
 }
 
-bool Window::IsWindowResized() { return Input::WindowEvent::Resized; }
+bool Window::IsWindowResized() { return Input::Get_Singleton()->Get_WindowEvent().Resized; }
 
 void Window::Clear(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)
 {

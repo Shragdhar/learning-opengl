@@ -14,9 +14,11 @@ SDL_Event event;
 
 int main()
 {
+    // Singletons first
+    Input* Input = Input::Get_Singleton();
+
     UniquePtr(Window) window =
         Window::CreateGLWindow("Weird ass title", 0, 0, 800, 800);
-    /*Input input;*/
 
     std::string proj_dir = FileHandler::get_base_dir();
     std::string vertex_file = "src/shaders/vertex.vs";
@@ -46,11 +48,10 @@ int main()
         VAO1.bind();
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
-        Input::Listen();
+        Input->Listen();
 
-        if (window->IsWindowResized()) { window->Resize(Input::WindowEvent::Width, Input::WindowEvent::Height); }
-        if (Input::IsKeyPressed(Input::Key::Escape)) { window->Quit(); }
-
+        if (window->IsWindowResized()) { window->Resize(Input->Get_WindowEvent().Width, Input->Get_WindowEvent().Height); }
+        if (Input->IsKeyPressed(Input::Key::Escape)) { window->Quit(); }
 
         window->SwapWindow();
     }

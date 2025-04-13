@@ -5,24 +5,29 @@
 class Input
 {
 public:
+    Input();
+    ~Input();
+
     enum class Key;
+
     struct WindowEvent;
+    std::unordered_map<SDL_Scancode, bool> keystate;
 
-    static std::unordered_map<SDL_Scancode, bool> keystate;
+    static Input* Get_Singleton();
+    WindowEvent& Get_WindowEvent();
 
-    static void Listen();
-    static void RegisterFunction(std::function<void()>);
 
-    static bool IsKeyPressed(Key);
-    static bool Quit();
+    void Listen();
+    void RegisterFunction(std::function<void()>);
+
+    bool IsKeyPressed(Key);
+    bool Quit();
 
     struct WindowEvent
     {
-        static inline bool Resized = false;
-        static inline int Width = 0;
-        static inline int Height = 0;
-
-        static inline bool CloseRequested = false;
+        bool  Resized = false;
+        int   Width = 0;
+        int   Height = 0;
     };
 
     enum class Key {
@@ -57,7 +62,8 @@ public:
     };
 
 private:
-    static std::vector<std::function<void()>> registered_functions;
+    static Input* instance;
+    WindowEvent window_event;
 };
 
 
