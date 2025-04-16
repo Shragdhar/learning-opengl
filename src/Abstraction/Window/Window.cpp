@@ -1,6 +1,7 @@
 #include "Window.hpp"
 #include "Abstraction/Input/Input.hpp"
 #include "Abstraction/Shader/Shader.hpp"
+#include "Abstraction/Renderer/Renderer.hpp"
 
 // Factory function to create window instance and return it
 std::unique_ptr<Window> Window::CreateGLWindow(const std::string& title, int posX, int posY, uint32_t height, uint32_t width, Uint32 flags)
@@ -23,7 +24,7 @@ std::unique_ptr<Window> Window::CreateGLWindow(const std::string& title, int pos
 
     if (!init_GLAD()) {return nullptr;}
 
-    glViewport(0,0,800,800);
+    glAPI::SetViewport(800, 800);
 
     return instance;
 }
@@ -32,13 +33,12 @@ bool Window::IsWindowResized() { return Input::Get_Singleton()->Get_WindowEvent(
 
 void Window::Clear(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)
 {
-    glClearColor(red, green, blue, alpha);
-    glClear(GL_COLOR_BUFFER_BIT);
+    Renderer::Get_Singleton()->ClearWindow(red, green, blue, alpha);
 }
 
 void Window::Resize(GLfloat width, GLfloat height)
 {
-    glViewport(0, 0, width, height);
+    glAPI::SetViewport(width, height);
 }
 
 void Window::SwapWindow()

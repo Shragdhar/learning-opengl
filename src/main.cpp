@@ -4,6 +4,7 @@
 #include "Abstraction/System/FileHandler.hpp"
 #include "Abstraction/Window/Window.hpp"
 #include "Abstraction/Input/Input.hpp"
+#include "Abstraction/Renderer/Renderer.hpp"
 
 #define UniquePtr(X) std::unique_ptr<X>
 
@@ -16,6 +17,7 @@ int main()
 {
     // Singletons first
     Input* Input = Input::Get_Singleton();
+    Renderer* Renderer = Renderer::Get_Singleton();
 
     UniquePtr(Window) window =
         Window::CreateGLWindow("Weird ass title", 0, 0, 800, 800);

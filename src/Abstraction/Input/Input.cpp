@@ -28,7 +28,6 @@ Input::WindowEvent& Input::Get_WindowEvent()
     return window_event;
 }
 
-
 void Input::Listen()
 {
     window_event.Resized = false;
