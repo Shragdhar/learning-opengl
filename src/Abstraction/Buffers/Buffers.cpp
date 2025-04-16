@@ -17,6 +17,7 @@ void VertexBuffer::attribute(GLuint index, GLuint size, GLenum type,
                     GLboolean normalized, GLsizei stride,
                     const void *pointer)
 {
+    this->bind();
     glVertexAttribPointer(index, size, type, normalized, stride, pointer);
     glEnableVertexAttribArray(index);
 }
@@ -32,6 +33,33 @@ void VertexBuffer::bind()
 }
 
 void VertexBuffer::unbind()
+{
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+}
+
+// -------------- Index Buffer Object ------------------------
+
+IndexBuffer::IndexBuffer(const void *data, GLsizeiptr size, GLenum usage)
+{
+    glGenBuffers(1, &index_buffer_object);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index_buffer_object);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER,
+                 size,
+                 data,
+                 usage);
+}
+
+GLuint IndexBuffer::get_id()
+{
+    return index_buffer_object;
+}
+
+void IndexBuffer::bind()
+{
+    glBindBuffer(GL_ARRAY_BUFFER, index_buffer_object);
+}
+
+void IndexBuffer::unbind()
 {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 }

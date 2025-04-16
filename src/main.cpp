@@ -29,26 +29,40 @@ int main()
     Shader shader1(vertex_file, fragment_file, proj_dir);
 
     float vertices[] = {
-        -0.5f, -0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f,
-        0.0f,  0.5f, 0.0f
+        // positions         // colors
+         0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   // bottom right
+        -0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   // bottom left
+         0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 1.0f,   // top right
+        -0.5f, 0.5f, 0.0f,    1.0f, 1.0f, 0.0f     // top left
+    };
+
+    unsigned int indices[] = {
+        2, 3, 0,
+        3, 1, 0
     };
 
     VertexArray VAO1;
 
     VertexBuffer VBO1(vertices, sizeof(vertices), GL_STATIC_DRAW);
-    VBO1.attribute(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);
+    VBO1.attribute(0, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)0);
+    VBO1.attribute(1, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)(3*sizeof(float)));
+
+    IndexBuffer EBO(indices, sizeof(indices), GL_STATIC_DRAW);
 
     VBO1.unbind();
     VAO1.unbind();
 
+    std::string variable = "sentColor";
     while (window->is_running())
     {
         window->Clear(0.2, 0.3, 0.5);
 
         shader1.use();
+
+        glAPI::SetUniformValue(shader1, variable, {1.0, 0.5, 0.5} );
+
         VAO1.bind();
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glAPI::DrawElements(6);
 
         Input->Listen();
 

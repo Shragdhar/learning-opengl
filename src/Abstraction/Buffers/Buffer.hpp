@@ -22,6 +22,21 @@ private:
     GLuint vertex_buffer_object;
 };
 
+class IndexBuffer
+{
+public:
+    IndexBuffer(const void *data,
+                 GLsizeiptr size,
+                 GLenum usage);
+
+    GLuint get_id();
+    void bind();
+    void unbind();
+
+private:
+    GLuint index_buffer_object;
+};
+
 class VertexArray
 {
 public:
