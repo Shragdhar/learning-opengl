@@ -1,8 +1,10 @@
+#pragma once
 #include <SDL2/SDL.h>
 #include <SDL_video.h>
 #include <memory>
 #include <glad/glad.h>
 #include <iostream>
+#include "Abstraction/Renderer/Renderer.hpp"
 
 class Window
 {
@@ -23,6 +25,7 @@ public:
     bool IsWindowResized();
 
     void Clear(GLfloat = 0, GLfloat=0, GLfloat=0, GLfloat=1);
+    void Clear(Color color);
     void Resize(GLfloat, GLfloat);
     void SwapWindow();
     void Quit();

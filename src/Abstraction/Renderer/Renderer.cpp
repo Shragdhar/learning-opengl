@@ -13,7 +13,7 @@ Renderer* Renderer::Get_Singleton()
 
 void Renderer::ClearWindow(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)
 {
-    glAPI::Clear(red, green, blue, alpha);
+    glAPI::Clear(red / 255, green / 255, blue / 255, alpha);
 }
 
 //-------------------------------------------------------------------------------------------
@@ -49,10 +49,9 @@ void DrawElements(GLsizei count) {
 }
 
 // Unifrom overloads ------------
-void SetUniformValue(Shader& shader, const std::string& variable, Color Color)
+void SetUniformValue(const Shader& shader, const std::string& variable, Color Color)
 {
     int uniform_location = GetUniformLocation(shader, variable);
-    glUseProgram(shader.get_id());
 
     if (Color.has_alpha) {
         glUniform4f(uniform_location, Color.red, Color.green, Color.blue, Color.alpha);
@@ -61,7 +60,25 @@ void SetUniformValue(Shader& shader, const std::string& variable, Color Color)
     }
 }
 
-GLint GetUniformLocation(Shader& shader, const std::string& variable)
+void SetUniformValue(const Shader& shader, const std::string& variable, const glm::mat4& value)
+{
+    int uniform_location = GetUniformLocation(shader, variable);
+    glUniformMatrix4fv(uniform_location, 1, GL_FALSE, glm::value_ptr(value));
+}
+
+void SetUniformValue(const Shader& shader, const std::string &variable, bool value) {
+    glUniform1i(glGetUniformLocation(shader.get_id(), variable.c_str()), (int)value);
+}
+
+void SetUniformValue(const Shader& shader, const std::string &variable, int value) { 
+    glUniform1i(glGetUniformLocation(shader.get_id(), variable.c_str()), value); 
+}
+
+void SetUniformValue(const Shader& shader, const std::string &variable, float value) { 
+    glUniform1f(glGetUniformLocation(shader.get_id(), variable.c_str()), value); 
+}
+
+GLint GetUniformLocation(const Shader& shader, const std::string& variable)
 {
     if (uniform_cache.find(variable) != uniform_cache.end()) return uniform_cache[variable];
     GLint loc = glGetUniformLocation(shader.get_id(), variable.c_str());

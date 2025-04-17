@@ -24,16 +24,19 @@ std::unique_ptr<Window> Window::CreateGLWindow(const std::string& title, int pos
 
     if (!init_GLAD()) {return nullptr;}
 
-    glAPI::SetViewport(800, 800);
+    glAPI::SetViewport(width, height);
 
     return instance;
 }
 
 bool Window::IsWindowResized() { return Input::Get_Singleton()->Get_WindowEvent().Resized; }
 
-void Window::Clear(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha)
-{
+void Window::Clear(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha) {
     Renderer::Get_Singleton()->ClearWindow(red, green, blue, alpha);
+}
+
+void Window::Clear(Color color) {
+    Renderer::Get_Singleton()->ClearWindow(color.red, color.green, color.blue, color.alpha);
 }
 
 void Window::Resize(GLfloat width, GLfloat height)

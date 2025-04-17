@@ -1,4 +1,4 @@
-#include "FileHandler.hpp"
+#include "Utils.hpp"
 
 namespace FileHandler
 {
@@ -65,4 +65,19 @@ namespace FileHandler
         file << content;
         file.close();
     }
+}
+
+// --------------------- Image ---------------------------
+//
+Image::Image(std::string image) {
+    image_data = stbi_load(image.c_str(), &width, &height, &nrChannels, 0);
+}
+
+void Image::status() const {
+    if (image_data) { std::cout << "Image loaded with x: " << width << " and y: " << height << std::endl; }
+    else { std::cout << "Image failed to load"; }
+}
+
+void Image::free_memory() {
+    stbi_image_free(image_data);
 }

@@ -1,5 +1,8 @@
+#pragma once
 #include "Abstraction/Shader/Shader.hpp"
 #include <glad/glad.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include <unordered_map>
 
@@ -22,7 +25,7 @@ typedef struct Color
     GLfloat red     = 0.0;
     GLfloat green   = 0.0;
     GLfloat blue    = 0.0;
-    GLfloat alpha   = 0.0;
+    GLfloat alpha   = 1.0;
     bool has_alpha;
 
     Color() = default;
@@ -45,6 +48,11 @@ namespace glAPI
     void DrawElements(GLsizei count);
 
     // Shader related
-    void SetUniformValue(Shader& shader, const std::string& variable, Color);
-    GLint GetUniformLocation(Shader& shader, const std::string& variable);
+    GLint GetUniformLocation(const Shader& shader, const std::string& variable);
+
+    void SetUniformValue(const Shader& shader, const std::string& variable, bool value);
+    void SetUniformValue(const Shader& shader, const std::string& variable, int value);
+    void SetUniformValue(const Shader& shader, const std::string& variable, float value);
+    void SetUniformValue(const Shader& shader, const std::string& variable, Color);
+    void SetUniformValue(const Shader& shader, const std::string& variable, const glm::mat4& value);
 }

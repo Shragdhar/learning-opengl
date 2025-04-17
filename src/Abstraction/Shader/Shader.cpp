@@ -1,5 +1,6 @@
+#include "Abstraction/Renderer/Renderer.hpp"
 #include "Abstraction/Window/handler.hpp"
-#include "Abstraction/System/FileHandler.hpp"
+#include "Abstraction/System/Utils.hpp"
 #include "Shader.hpp"
 
 Shader::Shader(std::string vertex_path, std::string fragment_path, std::string base_dir)
@@ -34,7 +35,18 @@ void Shader::use()
     glUseProgram(shader_program_index);
 }
 
-GLuint Shader::get_id()
-{
-    return shader_program_index;
+void Shader::set(const std::string &name, bool value) const {
+    glAPI::SetUniformValue(*this, name, value);
+}
+
+void Shader::set(const std::string &name, int value) const {
+    glAPI::SetUniformValue(*this, name, value);
+}
+
+void Shader::set(const std::string &name, float value) const {
+    glAPI::SetUniformValue(*this, name, value);
+}
+
+void Shader::set(const std::string &name, const glm::mat4& value) const {
+    glAPI::SetUniformValue(*this, name, value);
 }
